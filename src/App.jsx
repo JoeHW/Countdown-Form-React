@@ -8,7 +8,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       deadline: 'November 27, 2017',
-      newDeadline: ""
+      newDeadline: "",
+      timer: 0
     }
   }
 
@@ -28,6 +29,7 @@ changeDeadline = () => {
      <Button className="btn btn-success" onClick={() => this.changeDeadline()}>Submit</Button>
      </Form>
      </div>
+     
 
   )
  }

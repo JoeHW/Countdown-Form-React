@@ -10,9 +10,7 @@ class App extends React.Component {
     this.state = {
       deadline: 'November 27, 2017',
       newDeadline: "",
-      newMinutes: '0',
-      newSeconds: '0',
-      minutes: '0',
+      newSeconds: "",
       seconds: '0'
     }
   }
@@ -22,12 +20,11 @@ changeDeadline = () => {
 }
 
 startTimer = () => {
-  this.setState({minutes: this.state.newMinutes, seconds: this.state.newSeconds -1})
-  console.log(this.state)
+  this.setState({seconds: this.state.newSeconds})
 }
 
 resetTimer = () => {
-  this.setState({newMinutes: '0', newSeconds: '0', minutes: '0', seconds: '0'})
+  this.setState({newSeconds: '0', seconds: '0'})
   console.log(this.state)
 }
 
@@ -41,20 +38,21 @@ resetTimer = () => {
       <Clock deadline={this.state.deadline} />
      </div>
      <Form inline>
-     <FormControl className='deadlineInput' placeholder='new date' onChange={event => this.setState({newDeadline: event.target.value})} />
-     <Button className="btn btn-success" onClick={() => this.changeDeadline()}>Submit</Button>
+     <FormControl className='deadlineInput' placeholder='New Date' onChange={event => this.setState({newDeadline: event.target.value})} />
+     <Button className="btn btn-primary" onClick={() => this.changeDeadline()}>Submit</Button>
      <br />
      <br />
      </Form>
+     <div className='App-stopwatch'>Stopwatch</div>
      <div className="stopwatch">
      <div>
-     <Stopwatch minutes={this.state.minutes} seconds={this.state.seconds}  />
+     <Stopwatch seconds={this.state.seconds}  />
        <Form inline>
-       <FormControl className="stopwatchInput" placeholder="Enter Minutes" onChange={event => this.setState({newMinutes: event.target.value})} />
        <FormControl className="stopwatchInput" placeholder="Enter Seconds" onChange={event => this.setState({newSeconds: event.target.value})} />
-        <Button className="btn btn-danger" onClick={() => this.startTimer()}>Start Timer</Button>
-        <Button className="btn btn-warning" onClick={() => this.resetTimer()}>Clear Timer</Button>
-       </Form>
+         </Form>
+        <Button className="btn btn-primary" onClick={() => this.startTimer()}>Start Timer</Button>
+        <Button className="btn btn-basic" onClick={() => this.resetTimer()}>Clear Timer</Button>
+
      </div>
      </div>
      </div>

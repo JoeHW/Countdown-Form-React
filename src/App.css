@@ -1,11 +1,17 @@
 .App {
   text-align: center;
   font-size: 35px;
-  margin-top: 20%
+  margin-top: 10%
+}
+
+.App-stopwatch {
+  font-size: 30px
 }
 
 .App-title {
   font-size: 50px;
+  background-color: #330000;
+  color: white;
 }
 
 .clock-days, .clock-minutes, .clock-hours, .clock-seconds {
@@ -29,11 +35,16 @@
 }
 
 .btn {
-  margin: 10px
+  margin: 10px;
 
 }
 
 .stopwatchInput {
  margin: 5px
+
+}
+
+.stopwatch-time {
+ background-color: 	#ff8000
 
 }

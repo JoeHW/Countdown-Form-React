@@ -1,31 +1,36 @@
-import React {Component} from 'react';
+import React, {Component} from 'react';
 import './App.jsx';
-import {Form, FormControl, Button} from 'react-bootstrap';
+
 
 class Stopwatch extends Component {
  constructor(props){
    super(props);
    this.state = {
-     stopTimer: 0,
-     newTime: 0,
+     minutes: this.props.minutes,
+     seconds: this.props.seconds
   }
  }
 
- startTimer = (time) => {
-   this.setState(prevState => ({
-     newTime: prevState.newTime - 1})
-}
+ componentWillMount = () => this.setTime();
 
+ componentDidMount = () => setInterval(() => this.setTime(), 1000);
+
+setTime = () => {
+  if(this.state.seconds > 0){
+  const minutes = this.state.minutes;
+  const seconds = this.state.seconds -1
+
+
+ this.setState({minutes, seconds})
+ }
+}
 
 render() {
  return (
-    <div className="stopwatch">
-      <Form>
-      <FormControl classNmae="stopwatchInput" placeholder="Enter Time" onChange={event => this.setState({this.state.newTime: event.target.value})} />
-       <Button className="stopwatchButton" onClick={() => this.startTimer(this.state.newTime)}>Start Timer</Button>
-      </Form>
+    <div>
+    <div className='stopwatch-minutes'>{this.state.minutes} minutes</div>
+    <div className='stopwatch-seconds'>{this.state.seconds} seconds</div>
     </div>
-
  )
 }
 

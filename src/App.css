@@ -19,3 +19,21 @@
   margin: 5px
 
 }
+
+.stopwatch-seconds, .stopwatch-minutes{
+  display: inline;
+  margin: 20px;
+  font-size: 20px
+
+
+}
+
+.btn {
+  margin: 10px
+
+}
+
+.stopwatchInput {
+ margin: 5px
+
+}

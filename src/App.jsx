@@ -11,7 +11,7 @@ class App extends React.Component {
       deadline: 'November 27, 2017',
       newDeadline: "",
       newSeconds: "",
-      seconds: "30"
+      seconds: "0"
     }
   }
 

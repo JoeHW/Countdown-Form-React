@@ -6,7 +6,7 @@ class Stopwatch extends Component {
  constructor(props){
    super(props);
    this.state = {
-     seconds: this.props.seconds,
+     seconds: this.props.newSeconds,
      newSecs: ""
 }
 }
@@ -16,10 +16,10 @@ class Stopwatch extends Component {
  componentDidMount = () => setInterval(() => this.setTimeAgain(this.state.newSecs), 1000);
 
 setTime = (secs) => {
-if(this.state.seconds > 0){
+//if(this.state.seconds > 0){
 this.setState({newSecs: this.props.seconds -1})
 console.log(this.state);
-}}
+}
 
 setTimeAgain = (secs) => {
 if(this.state.newSecs > 0){
